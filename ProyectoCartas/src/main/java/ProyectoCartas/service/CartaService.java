@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 @Transactional
 
-// Ya al tener el repositorio importado, no es necesario crear los metodos en
+// Ya al tener el repositorio importado, no es necesario crear los metodos en la clase repository (a menos que sean datos unique o primary key)
 public class CartaService {
     private final CartaRepository cartaRepository;
 
