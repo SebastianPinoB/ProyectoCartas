@@ -20,13 +20,11 @@ public class CartaController {
 
     @GetMapping
     public List<Carta> listarCartas(){
-        List<Carta> cartas = cartaService.listarCartas();
-        return cartas;
+        return cartaService.listarCartas();
     }
 
     @PostMapping
     public ResponseEntity<Carta> agregarCarta(@RequestBody Carta carta){
-        Carta cartaNueva = cartaService.guardarCarta(carta);
-        return ResponseEntity.status(HttpStatus.CREATED).body(cartaNueva);
+        return new ResponseEntity<>(cartaService.guardarCarta(carta), HttpStatus.CREATED);
     }
 }

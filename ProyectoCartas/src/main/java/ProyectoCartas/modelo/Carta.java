@@ -24,5 +24,4 @@ public class Carta {
     @Column(nullable = false)
     private int precio;
 
-
 }
