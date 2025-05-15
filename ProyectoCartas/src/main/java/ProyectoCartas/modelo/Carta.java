@@ -24,4 +24,31 @@ public class Carta {
     @Column(nullable = false)
     private int precio;
 
+    public Integer getIdCarta() {
+        return idCarta;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCodigoExp() {
+        return codigoExp;
+    }
+
+    public int getPrecio() {
+        return precio;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCodigoExp(String codigoExp) {
+        this.codigoExp = codigoExp;
+    }
+
+    public void setPrecio(int precio) {
+        this.precio = precio;
+    }
 }

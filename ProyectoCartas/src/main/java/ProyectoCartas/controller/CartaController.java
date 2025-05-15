@@ -27,4 +27,24 @@ public class CartaController {
     public ResponseEntity<Carta> agregarCarta(@RequestBody Carta carta){
         return new ResponseEntity<>(cartaService.guardarCarta(carta), HttpStatus.CREATED);
     }
+
+    @GetMapping("/{id}")
+    public Carta buscarCarta(@PathVariable Integer id){
+        return cartaService.findById(id);
+    }
+
+    @PutMapping("/{id}")
+    public Carta cambiarCarta(@PathVariable Integer id, @RequestBody Carta c) {
+        Carta cartaR = cartaService.findById(id);
+        cartaR.setNombre(c.getNombre());
+        cartaR.setCodigoExp(c.getCodigoExp());
+        cartaR.setPrecio(c.getPrecio());
+        return cartaService.guardarCarta(cartaR);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminarCarta(@PathVariable Integer id){
+        cartaService.eliminarCarta(id);
+    }
 }

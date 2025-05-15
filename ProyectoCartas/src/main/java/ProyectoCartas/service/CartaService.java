@@ -31,4 +31,8 @@ public class CartaService {
 
         return cartaRepository.save(carta);
     }
+
+    public void eliminarCarta(Integer id){
+        cartaRepository.deleteById(id);
+    }
 }
