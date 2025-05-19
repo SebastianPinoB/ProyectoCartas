@@ -24,6 +24,12 @@ public class Carta {
     @Column(nullable = false)
     private int precio;
 
+    @ManyToOne
+    @JoinColumn(name = "idCliente")
+    private Cliente Cliente;
+
+
+
     public Integer getIdCarta() {
         return idCarta;
     }

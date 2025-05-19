@@ -1,6 +1,7 @@
 package ProyectoCartas.modelo;
 
 import ProyectoCartas.modelo.Compra;
+import ProyectoCartas.modelo.Carta;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,6 +23,6 @@ public class Cliente {
     private String run;
     @Column(nullable = false)
     private String nombre;
-    @Column(nullable = false)
-    private List<Compra> compras;
+
+
 }
