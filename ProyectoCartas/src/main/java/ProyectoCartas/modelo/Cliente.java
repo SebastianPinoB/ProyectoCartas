@@ -19,10 +19,9 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCliente;
-    @Column(nullable = false, unique = true)
     private String run;
-    @Column(nullable = false)
     private String nombre;
+
 
 
 }
