@@ -22,9 +22,7 @@ public class Compra {
     private Cliente Cliente;
     */
 
-    @ManyToOne
-    @JoinColumn(name = "idCarta")
-    private Carta Carta;
+    private int id_carta;
 
     /*
     @Column(nullable = false)

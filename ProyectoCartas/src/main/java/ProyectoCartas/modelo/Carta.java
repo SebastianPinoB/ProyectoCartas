@@ -17,17 +17,9 @@ public class Carta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCarta;
-    @Column(nullable = false)
     private String nombre;
-    @Column(nullable = false)
     private String codigoExp;
-    @Column(nullable = false)
     private int precio;
-
-    @ManyToOne
-    @JoinColumn(name = "idCliente")
-    private Cliente Cliente;
-
 
 
     public Integer getIdCarta() {

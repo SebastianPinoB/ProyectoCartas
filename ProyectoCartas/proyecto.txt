@@ -1,0 +1,31 @@
+CREATE DATABASE IF NOT EXISTS db_cartas CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
+USE db_cartas;
+
+
+
+CREATE TABLE carta(
+
+ id_carta INT AUTO_INCREMENT PRIMARY KEY,
+
+ nombre VARCHAR(100) NOT NULL,
+
+ codigo_exp VARCHAR(20),
+
+ precio INT NOT NULL
+
+);
+
+
+
+CREATE TABLE compra(
+
+id_compra INT NOT NULL PRIMARY KEY,
+
+carta_id_fk INT,
+
+FOREIGN KEY(carta_id_fk) REFERENCES carta(id_carta) ON DELETE SET NULL
+
+);
+
+SELECT * FROM compra CO JOIN carta CA ON (CA.id_carta = CO.id_carta);
