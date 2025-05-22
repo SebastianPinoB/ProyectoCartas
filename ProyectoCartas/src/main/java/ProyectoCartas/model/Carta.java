@@ -35,4 +35,52 @@ public class Carta {
     @ManyToOne
     @JoinColumn(name = "idRareza")
     private Rareza rarezaCarta;
+
+    public String getNombreCarta() {
+        return nombreCarta;
+    }
+
+    public void setNombreCarta(String nombreCarta) {
+        this.nombreCarta = nombreCarta;
+    }
+
+    public Integer getIdCarta() {
+        return idCarta;
+    }
+
+    public void setIdCarta(Integer idCarta) {
+        this.idCarta = idCarta;
+    }
+
+    public int getPrecioCarta() {
+        return precioCarta;
+    }
+
+    public void setPrecioCarta(int precioCarta) {
+        this.precioCarta = precioCarta;
+    }
+
+    public int getStockCarta() {
+        return stockCarta;
+    }
+
+    public void setStockCarta(int stockCarta) {
+        this.stockCarta = stockCarta;
+    }
+
+    public Rareza getRarezaCarta() {
+        return rarezaCarta;
+    }
+
+    public void setRarezaCarta(Rareza rarezaCarta) {
+        this.rarezaCarta = rarezaCarta;
+    }
+
+    public TipoCarta getTipoDeCarta() {
+        return tipoDeCarta;
+    }
+
+    public void setTipoDeCarta(TipoCarta tipoDeCarta) {
+        this.tipoDeCarta = tipoDeCarta;
+    }
 }
