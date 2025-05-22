@@ -2,9 +2,7 @@ package ProyectoCartas.service;
 
 import ProyectoCartas.model.Carta;
 import ProyectoCartas.model.TipoCarta;
-import ProyectoCartas.service.TipoCartaService;
 import ProyectoCartas.model.Rareza;
-import ProyectoCartas.service.RarezaService;
 import ProyectoCartas.repository.CartaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +31,4 @@ public class CartaService {
         carta.setRarezaCarta(rareza);
         return cartaRepo.save(carta);
     }
-
 }
