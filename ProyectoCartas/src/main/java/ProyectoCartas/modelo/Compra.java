@@ -14,8 +14,7 @@ import lombok.NoArgsConstructor;
 public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCompra;
-
+    private Integer id;
 
     /*
     @ManyToOne
@@ -24,9 +23,11 @@ public class Compra {
     */
 
     @ManyToOne
-    @JoinColumn(name = "idCarta", nullable = false)
+    @JoinColumn(name = "idCarta")
     private Carta Carta;
 
+    /*
     @Column(nullable = false)
     private String fecha;
+     */
 }
