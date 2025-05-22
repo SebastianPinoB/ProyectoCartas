@@ -29,7 +29,7 @@ public class Cliente {
 
     @ManyToOne
     @JoinColumn(name = "idCarta")
-    private List<Carta> cartasCompradas;
+    private Carta cartasCompradas;
 
     /*
     @ManyToOne

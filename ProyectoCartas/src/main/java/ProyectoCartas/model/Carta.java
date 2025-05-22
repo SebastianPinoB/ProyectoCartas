@@ -23,6 +23,9 @@ public class Carta {
     @Column(nullable = false)
     private int precioCarta;
 
+    @Column(nullable = false)
+    private int stockCarta;
+
     // muchas cartas pueden tener un tipo de carta
     @ManyToOne
     @JoinColumn(name = "idTipoCarta")

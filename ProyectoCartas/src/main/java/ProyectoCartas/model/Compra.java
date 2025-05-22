@@ -11,6 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 
+// Aqui va todo lo que es la logica de negocio
 public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
