@@ -18,4 +18,20 @@ public class Rareza {
 
     @Column(nullable = false)
     private String nombreRareza;
+
+    public Integer getIdRareza() {
+        return idRareza;
+    }
+
+    public void setIdRareza(Integer idRareza) {
+        this.idRareza = idRareza;
+    }
+
+    public String getNombreRareza() {
+        return nombreRareza;
+    }
+
+    public void setNombreRareza(String nombreRareza) {
+        this.nombreRareza = nombreRareza;
+    }
 }

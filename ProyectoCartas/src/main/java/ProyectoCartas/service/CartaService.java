@@ -25,17 +25,13 @@ public class CartaService {
         return cartaRepo.findAll();
     }
 
-    public Carta guardarCarta(Carta cartsa, Integer idTipoCarta, Integer idRareza){
-        TipoCarta tipoCartaB = tipoCartaServ.encontrarPorId(idTipoCarta); // revisar esta cosa
-        Rareza rarezaB = rarezaServ.encontrar(idRareza);
+    public Carta guardarCarta(Carta carta){
+        Rareza rareza = rarezaServ.encontrar(carta.getRarezaCarta().getIdRareza());
+        TipoCarta tipoCarta = tipoCartaServ.encontrarPorId(carta.getTipoDeCarta().getIdTipoCarta());
 
-        if (tipoCartaB != null && rarezaB != null){
-            cartsa.setRarezaCarta(rarezaB);
-            cartsa.setTipoDeCarta(tipoCartaB);
-            return cartaRepo.save(cartsa);
-        } else {
-            return null;
-        }
+        carta.setTipoDeCarta(tipoCarta);
+        carta.setRarezaCarta(rareza);
+        return cartaRepo.save(carta);
     }
 
 }

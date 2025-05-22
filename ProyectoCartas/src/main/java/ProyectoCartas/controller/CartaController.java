@@ -3,6 +3,7 @@ package ProyectoCartas.controller;
 import ProyectoCartas.model.Carta;
 import ProyectoCartas.service.CartaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,9 +21,9 @@ public class CartaController {
     }
 
 
-    // pendiente no funciona
-    @PostMapping("/crear")
-    public Carta guardarCarta(@RequestBody Carta cartaSave, @RequestParam Integer idTipoCarta, @RequestParam Integer idRareza){
+    // esta wea es la menos practica que he hecho.
+    @PostMapping
+    public Carta guardarCarta(@RequestBody Carta cartaSave){
         return cartaServ.guardarCarta(cartaSave);
     }
 }

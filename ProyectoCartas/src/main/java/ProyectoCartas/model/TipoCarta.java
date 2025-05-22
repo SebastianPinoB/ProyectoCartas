@@ -18,4 +18,20 @@ public class TipoCarta {
 
     @Column(nullable = false)
     private String nombreTipoCarta;
+
+    public Integer getIdTipoCarta() {
+        return idTipoCarta;
+    }
+
+    public void setIdTipoCarta(Integer idTipoCarta) {
+        this.idTipoCarta = idTipoCarta;
+    }
+
+    public String getNombreTipoCarta() {
+        return nombreTipoCarta;
+    }
+
+    public void setNombreTipoCarta(String nombreTipoCarta) {
+        this.nombreTipoCarta = nombreTipoCarta;
+    }
 }
