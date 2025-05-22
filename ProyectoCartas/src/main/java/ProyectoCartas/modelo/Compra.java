@@ -22,6 +22,7 @@ public class Compra {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private int id_carta;
+    //private int id_cliente;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate fecha = LocalDate.now();
 
