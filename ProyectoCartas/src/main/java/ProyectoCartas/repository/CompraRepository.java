@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface CompraRepository extends JpaRepository<Compra, Integer> {
-    List<Compra> findAllById(Integer idCliente);
+    //List<Compra> findAllById(Integer idCliente);
+
 }

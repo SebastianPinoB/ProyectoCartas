@@ -21,19 +21,11 @@ public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private int id_carta;
-    //private int id_cliente;
+    @ManyToOne
+    @JoinColumn(name = "carta_id_fk")
+    private Carta carta;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate fecha = LocalDate.now();
 
-    /*
-    @ManyToOne
-    @JoinColumn(name = "idCliente", nullable = false)
-    private Cliente Cliente;
-    */
 
-    /*
-    @Column(nullable = false)
-    private String fecha;
-     */
 }

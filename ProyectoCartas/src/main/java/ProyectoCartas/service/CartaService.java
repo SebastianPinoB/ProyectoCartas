@@ -24,7 +24,7 @@ public class CartaService {
     }
 
     public Carta findById(Integer id){
-        return cartaRepository.findByIdCarta(id);
+        return cartaRepository.findById(id).get();
     }
 
     public Carta guardarCarta(Carta carta){
