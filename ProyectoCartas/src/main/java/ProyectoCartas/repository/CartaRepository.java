@@ -1,4 +1,6 @@
 package ProyectoCartas.repository;
 
-public class CartaRepository {
-}
+import ProyectoCartas.model.Carta;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CartaRepository extends JpaRepository<Carta, Integer> { }
