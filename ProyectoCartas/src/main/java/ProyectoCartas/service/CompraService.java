@@ -1,7 +1,9 @@
 package ProyectoCartas.service;
 
 import ProyectoCartas.modelo.Carta;
+import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.modelo.Compra;
+import ProyectoCartas.repository.ClienteRepository;
 import ProyectoCartas.repository.CompraRepository;
 import ProyectoCartas.repository.CartaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,21 +22,31 @@ public class CompraService {
     @Autowired
     private CartaRepository cartaRepository;
 
+    @Autowired
+    private ClienteRepository clienteRepository;
+
     public List<Compra> listarCompras(){
         return compraRepository.findAll();
     }
 
-    public ResponseEntity<?> crearCompra(@RequestBody Compra compra) {
+    public ResponseEntity<?> crearCompra(@RequestBody Compra compra, Cliente cliente) {
         Integer idCarta = compra.getCarta().getIdCarta();
+        Integer idCliente = compra.getCliente().getIdCliente();
 
         Carta carta = cartaRepository.findByIdCarta(idCarta);
+        cliente = clienteRepository.findById(idCliente).orElse(null);
 
         if (carta == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se encontró la carta :(");
         }
+        if (cliente == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se encontró el cliente :(");
+        }
         compra.setCarta(carta);
+        compra.setCliente(cliente);
+
         this.guardarCompra(compra);
-        return ResponseEntity.ok("Carta existe :)");
+        return ResponseEntity.ok("Compra realizada :). " + "\n Compra ID: " + compra.getId() + "\n Carta comprada: " + compra.getCarta().getNombre() + "\n Carta ID: " + compra.getCarta().getIdCarta());
     }
 
     public Compra guardarCompra(Compra compra){

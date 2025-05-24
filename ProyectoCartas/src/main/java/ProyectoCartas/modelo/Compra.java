@@ -24,6 +24,9 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name = "carta_id_fk")
     private Carta carta;
+    @ManyToOne
+    @JoinColumn(name = "cliente_id_fk")
+    private Cliente cliente;
     @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate fecha = LocalDate.now();
 

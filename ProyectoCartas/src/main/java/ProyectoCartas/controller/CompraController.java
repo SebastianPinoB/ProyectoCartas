@@ -1,8 +1,10 @@
 package ProyectoCartas.controller;
 
+import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.service.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +15,16 @@ public class CompraController {
     private CompraService compraService;
 
     @GetMapping
-    public Iterable<Compra> listarCompras(){
-        return compraService.listarCompras();
-    }
+    public Iterable<Compra> listarCompras() {return compraService.listarCompras(); }
 
     @PostMapping
-    public ResponseEntity<?> guardarCompra(@RequestBody Compra compra){
-        return compraService.crearCompra(compra);
+    public ResponseEntity<?> guardarCompra(@RequestBody Compra compra, Cliente cliente){
+        return compraService.crearCompra(compra, cliente);
     }
 
-    // falta el put y delete
+    //put?
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<?> eliminarCompra(@PathVariable Integer id){compraService.eliminarCompra(id); return ResponseEntity.ok("Compra eliminada :)");}
 
 }
