@@ -5,7 +5,10 @@ import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.repository.CompraRepository;
 import ProyectoCartas.repository.CartaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -21,17 +24,17 @@ public class CompraService {
         return compraRepository.findAll();
     }
 
-    public Compra crearCompra(Compra compra) {
+    public ResponseEntity<?> crearCompra(@RequestBody Compra compra) {
         Integer idCarta = compra.getCarta().getIdCarta();
 
         Carta carta = cartaRepository.findByIdCarta(idCarta);
 
-        if (carta.getIdCarta() == null) {
-            throw new RuntimeException("Carta no encontrada");
+        if (carta == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("No se encontró la carta :(");
         }
-
         compra.setCarta(carta);
-        return compraRepository.save(compra);
+        this.guardarCompra(compra);
+        return ResponseEntity.ok("Carta existe :)");
     }
 
     public Compra guardarCompra(Compra compra){

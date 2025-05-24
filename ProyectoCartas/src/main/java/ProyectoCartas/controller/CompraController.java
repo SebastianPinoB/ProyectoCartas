@@ -3,6 +3,7 @@ package ProyectoCartas.controller;
 import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.service.CompraService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,8 +18,8 @@ public class CompraController {
     }
 
     @PostMapping
-    public Compra guardarCompra(@RequestBody Compra compra){
-        return compraService.guardarCompra(compra);
+    public ResponseEntity<?> guardarCompra(@RequestBody Compra compra){
+        return compraService.crearCompra(compra);
     }
 
     // falta el put y delete
