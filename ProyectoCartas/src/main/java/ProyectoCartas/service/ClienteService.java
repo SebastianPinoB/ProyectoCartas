@@ -1,7 +1,9 @@
 package ProyectoCartas.service;
 
+import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.repository.ClienteRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,14 @@ public class ClienteService {
 
     public List<Cliente> listarClientes(){
         return clienteRepo.findAll();
+    }
+
+    //Poblar sin hacer Endpoint
+    @PostConstruct
+    public void poblarCarta(){
+        this.clienteRepo.save(new Cliente(null,"29382365-1","Jorge Pereira"));
+        this.clienteRepo.save(new Cliente(null,"26382368-7","John Doe"));
+        this.clienteRepo.save(new Cliente(null,"23882361-2","Eduardo Fonsalba"));
     }
 
     public Cliente guardarCliente(Cliente cliente){

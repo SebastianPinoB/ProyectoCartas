@@ -46,7 +46,8 @@ public class CompraService {
         compra.setCliente(cliente);
 
         this.guardarCompra(compra);
-        return ResponseEntity.ok("Compra realizada :). " + "\n Compra ID: " + compra.getId() + "\n Carta comprada: " + compra.getCarta().getNombre() + "\n Carta ID: " + compra.getCarta().getIdCarta());
+        return ResponseEntity.ok("Compra realizada :). " + "\n Compra ID: " + compra.getId() + "\n Carta comprada: " + compra.getCarta().getNombre()
+                + "\n Carta ID: " + compra.getCarta().getIdCarta() + "\n Cliente ID: " + compra.getCliente().getIdCliente()) ;
     }
 
     public Compra guardarCompra(Compra compra){
