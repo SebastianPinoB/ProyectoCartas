@@ -42,4 +42,6 @@ public class CartaService {
     public void eliminarCarta(Integer id){
         cartaRepository.deleteById(id);
     }
+
+
 }

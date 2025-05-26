@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 
 @RestController
@@ -40,6 +41,20 @@ public class CartaController {
         cartaR.setCodigoExp(c.getCodigoExp());
         cartaR.setPrecio(c.getPrecio());
         return cartaService.guardarCarta(cartaR);
+    }
+
+    @GetMapping("/filtroMenor")
+    public List<Carta> filtrarCartasMenor(){
+        List<Carta> cartas = cartaService.listarCartas();
+        cartas.sort(Comparator.comparing(Carta::getPrecio));
+        return cartas;
+    }
+
+    @GetMapping("/filtroMayor")
+    public List<Carta> filtrarCartasMayor(){
+        List<Carta> cartas = cartaService.listarCartas();
+        cartas.sort(Comparator.comparing(Carta::getPrecio).reversed());
+        return cartas;
     }
 
     @DeleteMapping("/{id}")
