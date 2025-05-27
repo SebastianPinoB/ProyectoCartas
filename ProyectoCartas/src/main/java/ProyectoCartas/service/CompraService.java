@@ -1,8 +1,10 @@
 package ProyectoCartas.service;
 
+import ProyectoCartas.modelo.Boleta;
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.modelo.Compra;
+import ProyectoCartas.repository.BoletaRepository;
 import ProyectoCartas.modelo.Stock;
 import ProyectoCartas.repository.ClienteRepository;
 import ProyectoCartas.repository.CompraRepository;
@@ -30,6 +32,9 @@ public class CompraService {
     @Autowired
     private StockRepository stockRepository;
 
+    @Autowired
+    private BoletaRepository boletaRepository;
+
     public List<Compra> listarCompras(){
         return compraRepository.findAll();
     }
@@ -56,9 +61,14 @@ public class CompraService {
         compra.setCliente(cliente);
         stock.setCantidad(stock.getCantidad() - 1); // posiblemente esto tenga que tener una cantidad especifica y no solo uno.
 
+
         this.guardarCompra(compra);
+        Boleta boleta = new Boleta();
+        boleta.setCompra(compra);
+        boletaRepository.save(boleta);
+
         return ResponseEntity.ok("Compra realizada :). " + "\n Compra ID: " + compra.getId() + "\n Carta comprada: " + compra.getCarta().getNombre()
-                + "\n Carta ID: " + compra.getCarta().getIdCarta() + "\n Cliente ID: " + compra.getCliente().getIdCliente()) ;
+                + "\n Carta Código Exp: " + compra.getCarta().getCodigoExp() + "\n Cliente ID: " + compra.getCliente().getIdCliente()) ;
     }
 
     public Compra guardarCompra(Compra compra){

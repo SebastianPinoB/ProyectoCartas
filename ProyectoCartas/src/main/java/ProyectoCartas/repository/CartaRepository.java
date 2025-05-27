@@ -9,12 +9,5 @@ import java.util.List;
 
 @Repository
 public interface CartaRepository extends JpaRepository<Carta, Integer> {
-    /*
-    private List<Carta> listaCartas = new ArrayList<>();
-    public CartaRepository(){
-        listaCartas.add(new Carta(1,"hola","EX1",1000));
-    }
-    */
-
     Carta findByIdCarta(Integer id);
 }
