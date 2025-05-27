@@ -1,5 +1,6 @@
 package ProyectoCartas.controller;
 
+import ProyectoCartas.modelo.Boleta;
 import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.service.CompraService;
@@ -18,7 +19,7 @@ public class CompraController {
     public Iterable<Compra> listarCompras() {return compraService.listarCompras(); }
 
     @PostMapping
-    public ResponseEntity<?> guardarCompra(@RequestBody Compra compra, Cliente cliente){
+    public ResponseEntity<?> guardarCompra(@RequestBody Compra compra, Cliente cliente) {
         return compraService.crearCompra(compra, cliente);
     }
 
