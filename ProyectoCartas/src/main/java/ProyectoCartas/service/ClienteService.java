@@ -2,7 +2,6 @@ package ProyectoCartas.service;
 
 <<<<<<< HEAD
 import ProyectoCartas.model.Cliente;
-import ProyectoCartas.repository.ClienteRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import java.util.List;
