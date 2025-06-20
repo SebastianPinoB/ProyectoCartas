@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c804d221-3519-4cef-97ac-cb1e157609d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ProyectoCartas.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/CartaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/CartaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/config/SwaggerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CompraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CompraController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +47,9 @@
     &quot;accountId&quot;: &quot;9653a3b3-946b-4c9f-b1cc-2a3556e41370&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -60,17 +61,40 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ProyectoCartasApplication.executor": "Run",
     "git-widget-placeholder": "gonzalo",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "C:/Users/Gonzalo/AppData/Local/Temp/Rar$DRa15572.29077/ProyectoCartas-main/ProyectoCartas/src/main/java/ProyectoCartas",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gonzalo\IdeaProjects\ProyectoCartas\ProyectoCartas\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ProyectoCartasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ProyectoCartas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ProyectoCartas.ProyectoCartasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -88,7 +112,8 @@
       <updated>1747932232901</updated>
       <workItem from="1747932234786" duration="751000" />
       <workItem from="1748011348930" duration="17000" />
-      <workItem from="1750447804125" duration="1072000" />
+      <workItem from="1750447804125" duration="2335000" />
+      <workItem from="1750450387674" duration="3005000" />
     </task>
     <servers />
   </component>
