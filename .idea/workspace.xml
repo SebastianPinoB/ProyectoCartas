@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86e58f76-a398-4863-8a86-dfd95023ec94" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/repository/CartaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/repository/CartaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/repository/ClienteRepository.java" afterDir="false" />
+    <list default="true" id="c804d221-3519-4cef-97ac-cb1e157609d9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ProyectoCartas.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/CartaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/CartaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/CompraService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/service/CompraService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,47 +30,69 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="bastian" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Gocabezon"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gocabezon&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/SebastianPinoB/ProyectoCartas.git",
-    "accountId": "c7be7a0f-727c-4fb1-b1dc-358be7049999"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/SebastianPinoB/ProyectoCartas.git&quot;,
+    &quot;accountId&quot;: &quot;9653a3b3-946b-4c9f-b1cc-2a3556e41370&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 5
-}]]></component>
-  <component name="ProjectId" id="2yjcCRwYbkEsdmrQUXsyT8Yb4jZ" />
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2xSX1J7nOPeGGDDQumyMPOwy9Xc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.ProyectoCartasApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "gonzalo"
+    "Spring Boot.ProyectoCartasApplication.executor": "Run",
+    "git-widget-placeholder": "gonzalo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.25410.129" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-IU-251.25410.129" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86e58f76-a398-4863-8a86-dfd95023ec94" name="Changes" comment="" />
-      <created>1750351295419</created>
+      <changelist id="c804d221-3519-4cef-97ac-cb1e157609d9" name="Changes" comment="" />
+      <created>1747932232901</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1750351295419</updated>
+      <updated>1747932232901</updated>
+      <workItem from="1747932234786" duration="751000" />
+      <workItem from="1748011348930" duration="17000" />
+      <workItem from="1750447804125" duration="1072000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

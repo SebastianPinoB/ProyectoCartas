@@ -1,32 +1,5 @@
 package ProyectoCartas.service;
 
-<<<<<<< HEAD
-import ProyectoCartas.model.Carta;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.stereotype.Service;
-import java.util.List;
-@Service
-public class CartaService {
-
-    private final CartaRepository repo;
-    public CartaService (CartaRepository repo) {
-        this.repo = repo;
-    }
-    public Carta guardar(Carta c) {
-        return repo.save(c);
-    }
-
-    public List<Carta> listar() {
-        return repo.findAll();
-    }
-
-    public Carta obtener(Integer id){
-        return repo.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Carta " + id + " no encontrada" ));
-    }
-    public void eliminar (Integer id){
-        repo.deleteById(id);
-=======
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.modelo.Stock;
 import ProyectoCartas.repository.CartaRepository;
@@ -89,6 +62,5 @@ public class CartaService {
     public void eliminarCarta(Integer id){
         cartaRepository.deleteById(id);
         stockRepository.deleteById(cartaRepository.findById(id).get().getIdCarta());
->>>>>>> origin/main
     }
 }
