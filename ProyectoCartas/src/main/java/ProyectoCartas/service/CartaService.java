@@ -28,19 +28,6 @@ public class CartaService {
         return cartaRepository.findAll();
     }
 
-    //Poblar sin hacer Endpoint
-    // Se crean tambien stocks para las cartas respectivas
-    @PostConstruct
-    public void poblarCarta(){
-        Carta carta1 = cartaRepository.save(new Carta(null,"Geralt de Rivia ","EXP-01",10000));
-        Carta carta2 = cartaRepository.save(new Carta(null,"Pochita Milei","EXP-02",12000));
-        Carta carta3 = cartaRepository.save(new Carta(null,"Gordon Freeman","EXP-03",15000));
-
-        stockRepository.save(new Stock(null, carta1, 50));
-        stockRepository.save(new Stock(null, carta2, 10));
-        stockRepository.save(new Stock(null, carta3, 20));
-    }
-
     public Carta findById(Integer id){
         return cartaRepository.findById(id).get();
     }

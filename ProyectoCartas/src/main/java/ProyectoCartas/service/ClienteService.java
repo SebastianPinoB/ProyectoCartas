@@ -18,14 +18,6 @@ public class ClienteService {
         return clienteRepo.findAll();
     }
 
-    //Poblar sin hacer Endpoint
-    @PostConstruct
-    public void poblarCarta(){
-        this.clienteRepo.save(new Cliente(null,"29382365-1","Jorge Pereira"));
-        this.clienteRepo.save(new Cliente(null,"26382368-7","John Doe"));
-        this.clienteRepo.save(new Cliente(null,"23882361-2","Eduardo Fonsalba"));
-    }
-
     public Cliente guardarCliente(Cliente cliente){
         return clienteRepo.save(cliente);
     }

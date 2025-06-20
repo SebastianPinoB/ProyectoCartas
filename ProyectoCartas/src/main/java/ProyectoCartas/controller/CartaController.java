@@ -15,7 +15,6 @@ import java.util.Comparator;
 import java.util.List;
 
 @RestController
-@Transactional
 @RequestMapping("/api/v1/cartas")
 public class CartaController {
 
