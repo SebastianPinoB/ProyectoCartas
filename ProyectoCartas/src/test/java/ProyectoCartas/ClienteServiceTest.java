@@ -33,6 +33,7 @@ public class ClienteServiceTest {
 
         assertNotNull(clientes);
         assertEquals(1, clientes.size());
+        // assertEquals funciona con un argumento en la posicion 1, el cual es el esperado y el otro es el actual el cual esta siendo usado
     }
 
     @Test
@@ -45,8 +46,6 @@ public class ClienteServiceTest {
 
         assertNotNull(encontrado);
         assertEquals(codigo, encontrado.getIdCliente()); // si la variable codigo y el id del cliente coincide entonces termina correctamente
-
-        // assertEquals funciona con un argumento en la posicion 1, el cual es el esperado y el otro es el actual el cual esta siendo usado.
     }
 
     @Test
