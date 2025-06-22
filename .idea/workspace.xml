@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c804d221-3519-4cef-97ac-cb1e157609d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/config/SwaggerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/BoletaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/BoletaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CompraController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/StockController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/BoletaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/BoletaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CartaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CartaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/ClienteController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CompraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CompraController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/StockController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +81,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -114,10 +121,15 @@
       <workItem from="1748011348930" duration="17000" />
       <workItem from="1750447804125" duration="2335000" />
       <workItem from="1750450387674" duration="3005000" />
+      <workItem from="1750457109029" duration="668000" />
+      <workItem from="1750599495177" duration="1359000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProyectoCartas$ProyectoCartasApplication.ic" NAME="ProyectoCartasApplication Coverage Results" MODIFIED="1750599925984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>
