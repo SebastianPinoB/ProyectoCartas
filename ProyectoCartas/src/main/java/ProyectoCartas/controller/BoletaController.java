@@ -4,6 +4,8 @@ import ProyectoCartas.modelo.Boleta;
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.service.BoletaService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,10 +23,18 @@ public class BoletaController {
 
     @GetMapping
     @Operation(summary = "Obtener las boletas generadas", description = "Obtener todas las boletas generadas")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public List<Boleta> listarBoletas() {return boletaService.listarBoletas();}
 
     @GetMapping("/{id}")
     @Operation(summary = "Buscar boleta por ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "Boleta no encontrada")
+    })
     public ResponseEntity<?> buscarBoleta(@PathVariable Integer id){
         return boletaService.buscarBoletaPorId(id);
     }

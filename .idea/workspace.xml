@@ -5,19 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c804d221-3519-4cef-97ac-cb1e157609d9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/BoletaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/BoletaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CartaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CompraController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/CompraController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/StockController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/src/main/java/ProyectoCartas/controller/StockController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/BoletaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/BoletaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CartaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CartaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/ClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CompraController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/CompraController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/StockController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoCartas/target/classes/ProyectoCartas/controller/StockController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +114,7 @@
       <workItem from="1750447804125" duration="2335000" />
       <workItem from="1750450387674" duration="3005000" />
       <workItem from="1750457109029" duration="668000" />
-      <workItem from="1750599495177" duration="1359000" />
+      <workItem from="1750599495177" duration="4957000" />
     </task>
     <servers />
   </component>

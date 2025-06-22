@@ -5,6 +5,8 @@ import ProyectoCartas.modelo.Stock;
 import ProyectoCartas.service.CartaService;
 import ProyectoCartas.service.StockService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,10 @@ public class CartaController {
 
     @GetMapping
     @Operation(summary = "Obtener las Cartas generadas")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public List<Carta> listarCartas(){
         return cartaService.listarCartas();
     }
@@ -39,6 +45,10 @@ public class CartaController {
     // aqui simplemente tienes que poner la cantidad con la url "localhost:8080/cartas/{cantidad}" en el postman
     @PostMapping("/{cantidad}")
     @Operation(summary = "Agregar Cartas a la base de datos")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "Carta no encontrada")
+    })
     public ResponseEntity<Carta> agregarCarta(@RequestBody Carta carta, @PathVariable Integer cantidad){
         return new ResponseEntity<>(cartaService.agregarCarta(carta, cantidad), HttpStatus.CREATED);
     }
@@ -53,6 +63,10 @@ public class CartaController {
     // No se considera el id, debido a que se crea con la compra.
     @PutMapping("/{id}/{cantidad}") // imagina que tenga que hacer esto desde la url :skull:
     @Operation(summary = "Editar Carta de la ID, cambiando la cantidad")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "Carta no encontrada")
+    })
     public Carta cambiarCarta(@PathVariable Integer id, @RequestBody Carta c, @PathVariable int cantidad) {
         Carta cartaR = cartaService.findById(id);
         cartaR.setNombre(c.getNombre());
@@ -73,6 +87,10 @@ public class CartaController {
 
     @GetMapping("/filtroMenor")
     @Operation(summary = "Filtrado de cartas en base a precio menor a mayor")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public List<Carta> filtrarCartasMenor(){
         List<Carta> cartas = cartaService.listarCartas();
         cartas.sort(Comparator.comparing(Carta::getPrecio));
@@ -81,6 +99,10 @@ public class CartaController {
 
     @GetMapping("/filtroMayor")
     @Operation(summary = "Filtrado de cartas en base a precio menor a mayor")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public List<Carta> filtrarCartasMayor(){
         List<Carta> cartas = cartaService.listarCartas();
         cartas.sort(Comparator.comparing(Carta::getPrecio).reversed());
@@ -89,6 +111,10 @@ public class CartaController {
 
     @DeleteMapping("/{id}")
     @Operation(summary = "Eliminar Carta segun ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "Carta no encontrada")
+    })
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void eliminarCarta(@PathVariable Integer id){
         cartaService.eliminarCarta(id);

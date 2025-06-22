@@ -3,6 +3,8 @@ package ProyectoCartas.controller;
 import ProyectoCartas.modelo.Stock;
 import ProyectoCartas.service.StockService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,10 @@ public class StockController {
 
     @GetMapping
     @Operation(summary = "Obtener stock")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public Iterable<Stock> listarStock(){
         return stockServ.listarStock();
     }
