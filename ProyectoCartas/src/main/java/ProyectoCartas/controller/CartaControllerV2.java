@@ -1,7 +1,9 @@
 package ProyectoCartas.controller;
 
 import ProyectoCartas.modelo.Carta;
+import ProyectoCartas.modelo.Stock;
 import ProyectoCartas.service.CartaService;
+import ProyectoCartas.service.StockService;
 import ProyectoCartas.assemblers.CartaModelAssembler;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ public class CartaControllerV2 {
     private CartaService cartaService;
     @Autowired
     private CartaModelAssembler cartaModelAssembler;
+    @Autowired
+    private StockService stockService;
 
     @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
     public CollectionModel<EntityModel<Carta>> listaCartas() {
@@ -46,12 +50,30 @@ public class CartaControllerV2 {
                 .body(cartaModelAssembler.toModel(cartaNueva));
     }
 
-    @PutMapping(value = "/{idCarta}", produces = MediaTypes.HAL_JSON_VALUE)
-    public ResponseEntity<EntityModel<Carta>> actualizarCarta(@PathVariable Integer idCarta, @RequestBody Carta carta) {
-        carta.setIdCarta(idCarta);
-        Carta actualizarCarta = cartaService.guardarCarta(carta);
+    @PutMapping(value = "/{idCarta}/{cantidad}", produces = MediaTypes.HAL_JSON_VALUE)
+    public ResponseEntity<EntityModel<Carta>> actualizarCarta(@PathVariable Integer idCarta, @RequestBody Carta carta, @PathVariable int cantidad) {
+        Carta cartaR = cartaService.findById(idCarta);
 
-        return ResponseEntity.ok(cartaModelAssembler.toModel(actualizarCarta));
+        if (cartaR == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        cartaR.setNombre(carta.getNombre());
+        cartaR.setCodigoExp(carta.getCodigoExp());
+        cartaR.setPrecio(carta.getPrecio());
+
+        Carta cartaGuardada = cartaService.guardarCarta(cartaR);
+        Stock stock = stockService.findByCarta(cartaR);
+
+        if (stock == null){
+            stock = new Stock(null, cartaR, cantidad);
+
+        } else {
+            stock.setCantidad(stock.getCantidad() + cantidad);
+        }
+
+        stockService.guardarStock(stock);
+        return ResponseEntity.ok(cartaModelAssembler.toModel(cartaGuardada));
     }
 
     @DeleteMapping(value = "/{idCarta}", produces = MediaTypes.HAL_JSON_VALUE)

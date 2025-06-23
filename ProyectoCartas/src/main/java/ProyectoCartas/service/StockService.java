@@ -32,4 +32,8 @@ public class StockService {
 
     public Stock findByCarta(Carta carta){return stockRepository.findByCarta(carta);
     }
+
+    public Stock findByCartaID(Integer idCarta){
+        return stockRepository.findByCarta_IdCarta(idCarta).orElseThrow(null);
+    }
 }

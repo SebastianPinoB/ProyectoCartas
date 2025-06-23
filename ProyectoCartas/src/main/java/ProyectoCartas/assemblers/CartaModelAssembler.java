@@ -1,5 +1,6 @@
 package ProyectoCartas.assemblers;
 
+import ProyectoCartas.controller.StockController;
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.controller.CartaControllerV2;
 
@@ -15,6 +16,7 @@ public class CartaModelAssembler implements  RepresentationModelAssembler<Carta,
     public EntityModel<Carta> toModel(Carta carta) {
         return EntityModel.of(carta,
                 linkTo(methodOn(CartaControllerV2.class).buscarCartaPorID(carta.getIdCarta())).withSelfRel(),
-                linkTo(methodOn(CartaControllerV2.class).listaCartas()).withRel("cartas"));
+                linkTo(methodOn(CartaControllerV2.class).listaCartas()).withRel("cartas"),
+                linkTo(methodOn(StockController.class).buscarCartaPorID(carta.getIdCarta())).withRel("stock"));
     }
 }
