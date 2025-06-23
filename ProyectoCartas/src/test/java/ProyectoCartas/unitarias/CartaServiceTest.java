@@ -56,4 +56,14 @@ public class CartaServiceTest {
         assertNotNull(guardado);
         assertEquals("COD-017", guardado.getCodigoExp());
     }
+
+    @Test
+    public void testDeleteCarta(){
+        Integer idCarta = 1;
+        Carta carta = new Carta();
+        doNothing().when(cartaRepository).deleteById(idCarta);
+
+        cartaService.eliminarCarta(idCarta);
+        verify(cartaRepository, times(1)).deleteById(idCarta);
+    }
 }

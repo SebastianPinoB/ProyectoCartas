@@ -60,7 +60,7 @@ public class CompraServiceTest {
 
         Compra guarda = compraService.guardarCompra(compra);
         assertNotNull(guarda);
-        assertEquals(1, guarda.getCliente()); // pueden jugar con el equals
+        assertEquals("Dragon de ojos azules", guarda.getCarta().getNombre()); // pueden jugar con el equals
     }
 
     @Test

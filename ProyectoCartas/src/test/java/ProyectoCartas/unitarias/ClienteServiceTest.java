@@ -59,4 +59,15 @@ public class ClienteServiceTest {
         assertEquals("asdasdd", guardado.getNombre()); // el primer argumento coincide con el siguiente osea, el nombre del cliente guardado finaliza corretamente
     }
 
+    @Test
+    public void testDeleteById(){
+        Integer codigo = 1;
+        Cliente cliente = new Cliente();
+
+        doNothing().when(clienteRepository).deleteById(codigo);
+        clienteService.eliminarCliente(codigo);
+
+        verify(clienteRepository, times(1)).deleteById(codigo);
+    }
+
 }
