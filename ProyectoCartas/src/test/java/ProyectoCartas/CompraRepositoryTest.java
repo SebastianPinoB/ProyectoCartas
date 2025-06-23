@@ -10,6 +10,7 @@ import ProyectoCartas.repository.CartaRepository;
 import ProyectoCartas.repository.ClienteRepository;
 import ProyectoCartas.repository.BoletaRepository;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 @DataJpaTest
 @ActiveProfiles("test")
 @Commit
@@ -48,6 +50,11 @@ class CompraRepositoryTest {
     // Registro real
     @BeforeEach
     void seed(){
+        cartaRepository.deleteAll();
+        clienteRepository.deleteAll();
+        compraRepository.deleteAll();
+        boletaRepository.deleteAll();
+
         cartaGuardada = new Carta(null, "Charmander", "COD-002", 1200);
         cartaRepository.save(cartaGuardada);
 
