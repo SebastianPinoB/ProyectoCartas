@@ -53,6 +53,7 @@ public class BoletaService {
         boletaRepository.deleteById(id);
     }
 
+    // A traves de la boleta, buscara la compra asociada por el de id de la compra
     public Boleta buscarCompraPorId(Integer idCompra){
         Compra compra = compraRepository.findById(idCompra).orElse(null);
         return boletaRepository.findBoletaByCompra(compra);

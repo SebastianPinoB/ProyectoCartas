@@ -39,6 +39,7 @@ public class CompraService {
         return compraRepository.findAll();
     }
 
+    // Crear compra forma 1
     public ResponseEntity<?> crearCompra(@RequestBody Compra compra, Cliente cliente) {
         Integer idCarta = compra.getCarta().getIdCarta();
         Integer idCliente = compra.getCliente().getIdCliente();
@@ -71,6 +72,7 @@ public class CompraService {
                 + "\n Carta Código Exp: " + compra.getCarta().getCodigoExp() + "\n Cliente ID: " + compra.getCliente().getIdCliente()) ;
     }
 
+    // Crear compra forma 2
     public Compra agregarCompra(Compra compra, Cliente cliente){
         Integer idCarta = compra.getCarta().getIdCarta();
         Integer idCliente = compra.getCliente().getIdCliente();
@@ -105,6 +107,7 @@ public class CompraService {
         return compra;
     }
 
+    // Metodo auxiliar para guardar la compra
     public Compra guardarCompra(Compra compra){
         return compraRepository.save(compra);
     }
