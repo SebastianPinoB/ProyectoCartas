@@ -1,7 +1,9 @@
 package ProyectoCartas.service;
 
 import ProyectoCartas.modelo.Boleta;
+import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.repository.BoletaRepository;
+import ProyectoCartas.repository.CompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,9 +13,10 @@ import java.util.List;
 
 @Service
 public class BoletaService {
-
     @Autowired
     private BoletaRepository boletaRepository;
+    @Autowired
+    private CompraRepository compraRepository;
 
     public List<Boleta> listarBoletas() { return boletaRepository.findAll();}
 
@@ -48,6 +51,11 @@ public class BoletaService {
 
     public void eliminarBoletaPorId(Integer id){
         boletaRepository.deleteById(id);
+    }
+
+    public Boleta buscarCompraPorId(Integer idCompra){
+        Compra compra = compraRepository.findById(idCompra).orElse(null);
+        return boletaRepository.findBoletaByCompra(compra);
     }
 
 }

@@ -1,6 +1,5 @@
 package ProyectoCartas.controller;
 
-import ProyectoCartas.modelo.Boleta;
 import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.service.CompraService;
@@ -18,12 +17,17 @@ public class CompraController {
     @GetMapping
     public Iterable<Compra> listarCompras() {return compraService.listarCompras(); }
 
+    @GetMapping("/{idCompra}")
+    public Compra buscarCompra(@PathVariable Integer idCompra) {
+        return compraService.findById(idCompra);
+    }
+
     @PostMapping
     public ResponseEntity<?> guardarCompra(@RequestBody Compra compra, Cliente cliente) {
         return compraService.crearCompra(compra, cliente);
     }
 
-    //put?
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<?> eliminarCompra(@PathVariable Integer id){compraService.eliminarCompra(id); return ResponseEntity.ok("Compra eliminada :)");}

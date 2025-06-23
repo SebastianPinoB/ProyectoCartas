@@ -71,6 +71,40 @@ public class CompraService {
                 + "\n Carta Código Exp: " + compra.getCarta().getCodigoExp() + "\n Cliente ID: " + compra.getCliente().getIdCliente()) ;
     }
 
+    public Compra agregarCompra(Compra compra, Cliente cliente){
+        Integer idCarta = compra.getCarta().getIdCarta();
+        Integer idCliente = compra.getCliente().getIdCliente();
+
+        Carta carta = cartaRepository.findByIdCarta(idCarta);
+        cliente = clienteRepository.findById(idCliente).orElse(null);
+        Stock stock = stockRepository.findByCarta(carta);
+
+        if (carta == null) {
+            throw new RuntimeException("No se encontro la carta :(");
+        }
+        if (cliente == null) {
+           throw new RuntimeException("No se encontro el cliente :(");
+        }
+
+        if (stock.getCantidad() <= 0) {
+            throw new RuntimeException("No hay stock de la carta :(");
+        }
+
+        compra.setCarta(carta);
+        compra.setCliente(cliente);
+
+        stock.setCantidad(stock.getCantidad() - 1);
+        stockRepository.save(stock); // posiblemente esto tenga que tener una cantidad especifica y no solo uno.
+
+        this.guardarCompra(compra);
+
+        Boleta boleta = new Boleta();
+        boleta.setCompra(compra);
+        boletaRepository.save(boleta);
+
+        return compra;
+    }
+
     public Compra guardarCompra(Compra compra){
         return compraRepository.save(compra);
     }
@@ -81,7 +115,6 @@ public class CompraService {
 
     public void eliminarCompra(Integer id){
         Compra eliminar = compraRepository.findById(id).orElseThrow(null);
-
         Boleta boleta = boletaRepository.findBoletaByCompra(eliminar);
 
         if (boleta != null) {
