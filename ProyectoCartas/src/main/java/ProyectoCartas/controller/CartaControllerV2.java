@@ -38,8 +38,8 @@ public class CartaControllerV2 {
     }
 
     @PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
-    public ResponseEntity<EntityModel<Carta>> crearCarta(@RequestBody Carta carta) {
-        Carta cartaNueva = cartaService.guardarCarta(carta);
+    public ResponseEntity<EntityModel<Carta>> crearCarta(@RequestBody Carta carta, @PathVariable int cantidad) {
+        Carta cartaNueva = cartaService.agregarCarta(carta, cantidad);
 
         return ResponseEntity
                 .created(linkTo(methodOn(CartaControllerV2.class).buscarCartaPorID(cartaNueva.getIdCarta())).toUri())

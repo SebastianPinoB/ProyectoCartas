@@ -80,6 +80,14 @@ public class CompraService {
     }
 
     public void eliminarCompra(Integer id){
-        compraRepository.deleteById(id);
+        Compra eliminar = compraRepository.findById(id).orElseThrow(null);
+
+        Boleta boleta = boletaRepository.findBoletaByCompra(eliminar);
+
+        if (boleta != null) {
+            boletaRepository.delete(boleta);
+        }
+
+        compraRepository.delete(eliminar);
     }
 }

@@ -47,7 +47,13 @@ public class CartaService {
 
     // Se elimina tambien el stock
     public void eliminarCarta(Integer id){
-        cartaRepository.deleteById(id);
-        stockRepository.deleteById(cartaRepository.findById(id).get().getIdCarta());
+        Carta cartaEliminar = cartaRepository.findById(id).orElseThrow(null);
+        Stock stockEliminar = stockRepository.findByCarta(cartaEliminar);
+
+        if (stockEliminar != null){
+            stockRepository.delete(stockEliminar);
+        }
+
+        cartaRepository.delete(cartaEliminar);
     }
 }
