@@ -42,4 +42,12 @@ public class BoletaService {
         return boletaRepository.findById(id).orElse(null);
     }
 
+    public Boleta guardarBoleta(Boleta boleta){
+        return boletaRepository.save(boleta);
+    }
+
+    public void eliminarBoletaPorId(Integer id){
+        boletaRepository.deleteById(id);
+    }
+
 }
