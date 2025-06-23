@@ -1,4 +1,4 @@
-package ProyectoCartas;
+package ProyectoCartas.unitarias;
 
 import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.repository.ClienteRepository;

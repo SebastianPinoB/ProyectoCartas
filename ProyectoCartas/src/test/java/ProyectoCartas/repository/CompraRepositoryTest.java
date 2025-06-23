@@ -1,14 +1,9 @@
-package ProyectoCartas;
+package ProyectoCartas.repository;
 
 import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.modelo.Cliente;
 import ProyectoCartas.modelo.Boleta;
-
-import ProyectoCartas.repository.CompraRepository;
-import ProyectoCartas.repository.CartaRepository;
-import ProyectoCartas.repository.ClienteRepository;
-import ProyectoCartas.repository.BoletaRepository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;

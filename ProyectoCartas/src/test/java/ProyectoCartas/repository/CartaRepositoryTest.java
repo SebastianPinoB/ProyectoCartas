@@ -1,10 +1,7 @@
-package ProyectoCartas;
+package ProyectoCartas.repository;
 
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.modelo.Stock;
-
-import ProyectoCartas.repository.CartaRepository;
-import ProyectoCartas.repository.StockRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,7 +35,6 @@ class CartaRepositoryTest {
         stockRepository.deleteAll();
 
         cartaGuardada = new Carta();
-        cartaGuardada.setIdCarta(1);
         cartaGuardada.setNombre("Lucario Plateado");
         cartaGuardada.setCodigoExp("COD-0100");
         cartaGuardada.setPrecio(235000);
@@ -46,8 +42,8 @@ class CartaRepositoryTest {
         cartaRepository.save(cartaGuardada);
 
         stockGuardada = new Stock();
-        stockGuardada.setIdStock(1);
         stockGuardada.setCarta(cartaGuardada);
+        stockGuardada.setCantidad(100);
 
         stockRepository.save(stockGuardada);
     }
@@ -64,4 +60,5 @@ class CartaRepositoryTest {
     void testDeleteByIdCarta_registroReal(){
         cartaRepository.deleteById(cartaGuardada.getIdCarta());
     }
+
 }

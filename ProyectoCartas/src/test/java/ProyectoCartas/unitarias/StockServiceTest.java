@@ -1,4 +1,4 @@
-package ProyectoCartas;
+package ProyectoCartas.unitarias;
 
 public class StockServiceTest {
 }

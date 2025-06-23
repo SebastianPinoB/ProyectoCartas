@@ -1,7 +1,6 @@
-package ProyectoCartas;
+package ProyectoCartas.repository;
 
 import ProyectoCartas.modelo.Cliente;
-import ProyectoCartas.repository.ClienteRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
