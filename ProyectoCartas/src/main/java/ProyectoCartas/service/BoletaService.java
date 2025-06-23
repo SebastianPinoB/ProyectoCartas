@@ -37,4 +37,9 @@ public class BoletaService {
         );
     }
 
+    // alternativo -- para las pruebas unitarias
+    public Boleta encontrarPorId(Integer id){
+        return boletaRepository.findById(id).orElse(null);
+    }
+
 }

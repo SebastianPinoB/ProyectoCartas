@@ -3,9 +3,13 @@ package ProyectoCartas;
 import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.modelo.Cliente;
+import ProyectoCartas.modelo.Boleta;
+
 import ProyectoCartas.repository.CompraRepository;
 import ProyectoCartas.repository.CartaRepository;
 import ProyectoCartas.repository.ClienteRepository;
+import ProyectoCartas.repository.BoletaRepository;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,36 +31,45 @@ import static org.junit.jupiter.api.Assertions.*;
 class CompraRepositoryTest {
     @Autowired
     private CompraRepository compraRepository;
-    private Compra compra;
+    private Compra compraGuardada;
+
     @Autowired
     private CartaRepository cartaRepository;
-    private Carta carta;
+    private Carta cartaGuardada;
+
     @Autowired
     private ClienteRepository clienteRepository;
-    private Cliente cliente;
+    private Cliente clienteGuardada;
+
+    @Autowired
+    private BoletaRepository boletaRepository;
+    private Boleta boletaGuardada;
 
     // Registro real
     @BeforeEach
     void seed(){
-        Carta carta = new Carta(null, "Charmander", "COD-002", 1200);
-        cartaRepository.save(carta);
+        cartaGuardada = new Carta(null, "Charmander", "COD-002", 1200);
+        cartaRepository.save(cartaGuardada);
 
-        Cliente cliente = new Cliente(null, "21458421", "Dola");
-        clienteRepository.save(cliente);
+        clienteGuardada = new Cliente(null, "21458421", "Dola");
+        clienteRepository.save(clienteGuardada);
 
-        Compra compra = new Compra(null, carta, cliente, LocalDate.now());
-        compraRepository.save(compra);
+        compraGuardada = new Compra(null, cartaGuardada, clienteGuardada, LocalDate.now());
+        compraRepository.save(compraGuardada);
+
+        boletaGuardada = new Boleta(null, compraGuardada);
+        boletaRepository.save(boletaGuardada);
     }
 
     @Test
     void testById_registroReal(){
-        Optional<Compra> compras = compraRepository.findById(compra.getId());
+        Optional<Compra> compras = compraRepository.findById(compraGuardada.getId());
         assertTrue(compras.isPresent());
         assertEquals("Dola", compras.get().getCliente().getNombre());
     }
 
     @Test
     void testDeleteById_registroReal(){
-        compraRepository.deleteById(compra.getId());
+        compraRepository.deleteById(compraGuardada.getId());
     }
 }

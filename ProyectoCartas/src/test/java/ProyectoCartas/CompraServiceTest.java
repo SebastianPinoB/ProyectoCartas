@@ -1,11 +1,13 @@
 package ProyectoCartas;
 
+import ProyectoCartas.modelo.Boleta;
 import ProyectoCartas.modelo.Carta;
 import ProyectoCartas.modelo.Compra;
 import ProyectoCartas.modelo.Cliente;
-import ProyectoCartas.modelo.Compra;
+
 import ProyectoCartas.repository.CompraRepository;
 import ProyectoCartas.service.CompraService;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +15,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -90,6 +91,10 @@ public class CompraServiceTest {
         compra.setCarta(carta);
         compra.setCliente(cliente);
         compra.setFecha(LocalDate.now());
+
+        Boleta boleta = new Boleta();
+        boleta.setId(1);
+        boleta.setCompra(compra);
 
         return compra;
     }
