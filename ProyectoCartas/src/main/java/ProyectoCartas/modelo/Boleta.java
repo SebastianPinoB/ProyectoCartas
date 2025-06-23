@@ -15,8 +15,14 @@ import lombok.NoArgsConstructor;
 public class Boleta {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "boleta_seq")
+    @SequenceGenerator(
+            name = "boleta_seq",
+            sequenceName = "boleta_sequence",
+            initialValue = 100
+    )
     private Integer id;
+
     @OneToOne
     @JoinColumn(name = "compra_id_fk")
     private Compra compra;

@@ -17,9 +17,15 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 
+// Secuencia que empieza de 10 hacia adelante
 public class Compra {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "compra_seq")
+    @SequenceGenerator(
+            name = "compra_seq",
+            sequenceName = "compra_sequence",
+            initialValue = 10
+    )
     private Integer id;
     @ManyToOne
     @JoinColumn(name = "carta_id_fk")

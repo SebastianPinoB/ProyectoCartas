@@ -12,7 +12,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Stock {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "stock_seq")
+    @SequenceGenerator(
+            name = "stock_seq",
+            sequenceName = "stock_sequence",
+            initialValue = 5
+    )
     private Integer idStock;
 
     @OneToOne
