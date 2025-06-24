@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -55,5 +56,17 @@ public class CartaService {
         }
 
         cartaRepository.delete(cartaEliminar);
+    }
+
+    public List<Carta> filtrarCartasMenor_a_Mayor(){
+        List<Carta> cartas = listarCartas();
+        cartas.sort(Comparator.comparing(Carta::getPrecio));
+        return cartas;
+    }
+
+    public List<Carta> filtrarCartasMayor_a_Menor(){
+        List<Carta> cartas = listarCartas();
+        cartas.sort(Comparator.comparing(Carta::getPrecio).reversed());
+        return cartas;
     }
 }

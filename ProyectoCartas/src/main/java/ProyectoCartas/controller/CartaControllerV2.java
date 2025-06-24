@@ -6,6 +6,10 @@ import ProyectoCartas.service.CartaService;
 import ProyectoCartas.service.StockService;
 import ProyectoCartas.assemblers.CartaModelAssembler;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
@@ -20,6 +24,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @RestController
 @RequestMapping("/api/v2/cartas")
+@Tag(name = "Cartas V2", description = "Generacion de Cartas")
 public class CartaControllerV2 {
     @Autowired
     private CartaService cartaService;
@@ -29,6 +34,11 @@ public class CartaControllerV2 {
     private StockService stockService;
 
     @GetMapping(produces = MediaTypes.HAL_JSON_VALUE)
+    @Operation(summary = "Obtener todos las Cartas")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public CollectionModel<EntityModel<Carta>> listaCartas() {
         List<EntityModel<Carta>> cartas = cartaService.listarCartas().stream().map(cartaModelAssembler::toModel).collect(Collectors.toList());
 
@@ -36,12 +46,22 @@ public class CartaControllerV2 {
     }
 
     @GetMapping(value = "/{idCarta}", produces = MediaTypes.HAL_JSON_VALUE)
+    @Operation(summary = "Obtener Carta por su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public EntityModel<Carta> buscarCartaPorID(@PathVariable Integer idCarta) {
         Carta carta = cartaService.findById(idCarta);
         return cartaModelAssembler.toModel(carta);
     }
 
     @PostMapping(produces = MediaTypes.HAL_JSON_VALUE)
+    @Operation(summary = "Creacion de una Carta")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public ResponseEntity<EntityModel<Carta>> crearCarta(@RequestBody Carta carta, @PathVariable int cantidad) {
         Carta cartaNueva = cartaService.agregarCarta(carta, cantidad);
 
@@ -51,6 +71,11 @@ public class CartaControllerV2 {
     }
 
     @PutMapping(value = "/{idCarta}/{cantidad}", produces = MediaTypes.HAL_JSON_VALUE)
+    @Operation(summary = "Modificar los datos de la carta por su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public ResponseEntity<EntityModel<Carta>> actualizarCarta(@PathVariable Integer idCarta, @RequestBody Carta carta, @PathVariable int cantidad) {
         Carta cartaR = cartaService.findById(idCarta);
 
@@ -77,8 +102,41 @@ public class CartaControllerV2 {
     }
 
     @DeleteMapping(value = "/{idCarta}", produces = MediaTypes.HAL_JSON_VALUE)
+    @Operation(summary = "Eliminar la Carta por su ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
     public ResponseEntity<?> eliminarCarta(@PathVariable Integer idCarta) {
         cartaService.eliminarCarta(idCarta);
         return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping("/filtroMenor")
+    @Operation(summary = "Filtrar Cartas por precio de menor a mayor")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
+    public CollectionModel<EntityModel<Carta>> filtrarCartasMenor(){
+        List<Carta> cartasOrdenadas = cartaService.filtrarCartasMenor_a_Mayor();
+        List<EntityModel<Carta>> cartaModel = cartasOrdenadas.stream().map(cartaModelAssembler::toModel).collect(Collectors.toList());
+
+        return CollectionModel.of(cartaModel,
+                linkTo(methodOn(CartaControllerV2.class).filtrarCartasMenor()).withSelfRel());
+    }
+
+    @GetMapping("/filtroMayor")
+    @Operation(summary = "Filtrar Cartas por precio de mayor a menor")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Operación exitosa"),
+            @ApiResponse(responseCode = "404", description = "DB Vacia")
+    })
+    public CollectionModel<EntityModel<Carta>> filtrarCartasMayor(){
+        List<Carta> cartasOrdenadas = cartaService.filtrarCartasMayor_a_Menor();
+        List<EntityModel<Carta>> cartaModel = cartasOrdenadas.stream().map(cartaModelAssembler::toModel).collect(Collectors.toList());
+
+        return CollectionModel.of(cartaModel,
+                linkTo(methodOn(CartaControllerV2.class).filtrarCartasMenor()).withSelfRel());
     }
 }
