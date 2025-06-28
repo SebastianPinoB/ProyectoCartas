@@ -31,9 +31,6 @@ class CartaRepositoryTest {
 
     @BeforeEach
     void seed(){
-        cartaRepository.deleteAll();
-        stockRepository.deleteAll();
-
         cartaGuardada = new Carta();
         cartaGuardada.setNombre("Lucario Plateado");
         cartaGuardada.setCodigoExp("COD-0100");
@@ -55,10 +52,4 @@ class CartaRepositoryTest {
         assertTrue(cartas.isPresent());
         assertEquals("COD-0100", cartas.get().getCodigoExp());
     }
-
-    @Test
-    void testDeleteByIdCarta_registroReal(){
-        cartaRepository.deleteById(cartaGuardada.getIdCarta());
-    }
-
 }

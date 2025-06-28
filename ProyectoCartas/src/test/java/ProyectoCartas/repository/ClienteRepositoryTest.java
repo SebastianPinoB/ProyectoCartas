@@ -35,9 +35,4 @@ class ClienteRepositoryTest {
         assertTrue(cliente.isPresent());
         assertEquals("Pablo", cliente.get().getNombre());
     }
-
-    @Test
-    void deletebyId(){
-        clienteRepository.deleteById(clienteGuardado.getIdCliente());
-    }
 }

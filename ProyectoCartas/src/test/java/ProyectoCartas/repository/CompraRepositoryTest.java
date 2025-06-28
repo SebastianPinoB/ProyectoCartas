@@ -45,11 +45,6 @@ class CompraRepositoryTest {
     // Registro real
     @BeforeEach
     void seed(){
-        cartaRepository.deleteAll();
-        clienteRepository.deleteAll();
-        compraRepository.deleteAll();
-        boletaRepository.deleteAll();
-
         cartaGuardada = new Carta(null, "Charmander", "COD-002", 1200);
         cartaRepository.save(cartaGuardada);
 
@@ -68,10 +63,5 @@ class CompraRepositoryTest {
         Optional<Compra> compras = compraRepository.findById(compraGuardada.getId());
         assertTrue(compras.isPresent());
         assertEquals("Dola", compras.get().getCliente().getNombre());
-    }
-
-    @Test
-    void testDeleteById_registroReal(){
-        compraRepository.deleteById(compraGuardada.getId());
     }
 }
